@@ -8,7 +8,7 @@ const { TwilioVoiceReactNative } = NativeModules;
 const TwilioVoiceExpo = requireNativeModule('TwilioVoiceExpo');
 
 class ExpoVoiceModule {
-  async connect(
+  async voice_connect(
     accessToken: string,
     twimlParams = {},
     calleeName = '',
