@@ -159,5 +159,6 @@
     "@twilio/voice-errors": "1.8.0",
     "eventemitter3": "^4.0.7",
     "expo-modules-core": "^2.3.13"
-  }
+  },
+  "packageManager": "yarn@4.9.2"
 }
