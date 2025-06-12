@@ -207,7 +207,7 @@ export class Call extends EventEmitter {
     getInitialConnectedTimestamp(): Date | undefined;
     getSid(): string | undefined;
     getState(): Call.State;
-    getStats(): Promise<RTCStats.StatsReport>;
+    getStats(): Promise<RTCStats_2.StatsReport>;
     getTo(): string | undefined;
     hold(hold: boolean): Promise<boolean>;
     isMuted(): boolean | undefined;
@@ -666,9 +666,9 @@ namespace RegistrationErrors {
 }
 
 // @public
-export namespace RTCStats {
+namespace RTCStats_2 {
     // (undocumented)
-    export interface BaseTrackStats {
+    interface BaseTrackStats {
         // (undocumented)
         codec: string;
         // (undocumented)
@@ -681,7 +681,7 @@ export namespace RTCStats {
         trackId: string;
     }
     // (undocumented)
-    export enum IceCandidatePairState {
+    enum IceCandidatePairState {
         // (undocumented)
         STATE_FAILED = "STATE_FAILED",
         // (undocumented)
@@ -694,7 +694,7 @@ export namespace RTCStats {
         STATE_WAITING = "STATE_WAITING"
     }
     // (undocumented)
-    export interface IceCandidatePairStats {
+    interface IceCandidatePairStats {
         // (undocumented)
         activeCandidatePair: boolean;
         // (undocumented)
@@ -753,7 +753,7 @@ export namespace RTCStats {
         writeable: boolean;
     }
     // (undocumented)
-    export interface IceCandidateStats {
+    interface IceCandidateStats {
         // (undocumented)
         candidateType: string;
         // (undocumented)
@@ -774,14 +774,14 @@ export namespace RTCStats {
         url: string;
     }
     // (undocumented)
-    export interface LocalAudioTrackStats extends LocalTrackStats {
+    interface LocalAudioTrackStats extends LocalTrackStats {
         // (undocumented)
         audioLevel: number;
         // (undocumented)
         jitter: number;
     }
     // (undocumented)
-    export interface LocalTrackStats extends BaseTrackStats {
+    interface LocalTrackStats extends BaseTrackStats {
         // (undocumented)
         bytesSent: number;
         // (undocumented)
@@ -790,7 +790,7 @@ export namespace RTCStats {
         roundTripTime: number;
     }
     // (undocumented)
-    export interface RemoteAudioTrackStats extends RemoteTrackStats {
+    interface RemoteAudioTrackStats extends RemoteTrackStats {
         // (undocumented)
         audioLevel: number;
         // (undocumented)
@@ -799,13 +799,13 @@ export namespace RTCStats {
         mos: number;
     }
     // (undocumented)
-    export interface RemoteTrackStats extends BaseTrackStats {
+    interface RemoteTrackStats extends BaseTrackStats {
         // (undocumented)
         bytesRecieved: number;
         // (undocumented)
         packetsReceived: number;
     }
-    export interface StatsReport {
+    interface StatsReport {
         // (undocumented)
         iceCandidatePairStats: IceCandidatePairStats[];
         // (undocumented)
@@ -818,6 +818,7 @@ export namespace RTCStats {
         remoteAudioTrackStats: RemoteAudioTrackStats[];
     }
 }
+export { RTCStats_2 as RTCStats }
 
 // @public
 namespace ServerErrors {
@@ -1013,7 +1014,6 @@ export class Voice extends EventEmitter {
     getCalls(): Promise<ReadonlyMap<Uuid, Call>>;
     getDeviceToken(): Promise<string>;
     getVersion(): Promise<string>;
-    handleFirebaseMessage(remoteMessage: Record<string, string>): Promise<boolean>;
     initializePushRegistry(): Promise<void>;
     isFullScreenNotificationEnabled(): Promise<boolean>;
     register(token: string): Promise<void>;
