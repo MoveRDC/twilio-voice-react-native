@@ -1,6 +1,6 @@
 require "json"
 
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
+package = JSON.parse(File.read(File.join(__dir__, "..", "package.json")))
 
 Pod::Spec.new do |s|
   s.name         = "twilio-voice-react-native"
@@ -13,10 +13,16 @@ Pod::Spec.new do |s|
   s.platforms    = { :ios => "11.0" }
   s.source       = { :git => "https://github.com/mhuynh5757/twilio-voice-react-native.git", :tag => "#{s.version}" }
 
-  s.source_files = "ios/**/*.{h,m,mm}"
+  s.source_files = "**/*.{h,m,mm,swift}"
 
   s.dependency "React-Core"
   s.dependency "TwilioVoice", "6.12.1"
+  s.dependency 'ExpoModulesCore'
   s.xcconfig  =  { 'VALID_ARCHS' => 'arm64 x86_64' }
-  s.pod_target_xcconfig   = { 'VALID_ARCHS[sdk=iphoneos*]' => 'arm64', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'arm64 x86_64' }
+  s.pod_target_xcconfig   = {
+    'DEFINES_MODULE' => 'YES',
+    'SWIFT_COMPILATION_MODE' => 'wholemodule',
+    'VALID_ARCHS[sdk=iphoneos*]' => 'arm64',
+    'VALID_ARCHS[sdk=iphonesimulator*]' => 'arm64 x86_64'
+  }
 end
