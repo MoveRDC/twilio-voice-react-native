@@ -77,4 +77,7 @@ workflows:
             - github
           requires:
             - setup_workspace
-
+          filters:
+            branches:
+              only:
+                - main
