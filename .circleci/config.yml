@@ -67,6 +67,4 @@ workflows:
           context:
             - aws
             - github
-          filters:
-            branches:
-              only: main
+
