@@ -50,6 +50,11 @@ jobs:
           write-access: true
           tool: npm
       - run:
+          name: Install packaging deps
+          command: |
+            sudo apt-get update
+            sudo apt-get install rsync
+      - run:
           name: Prepare package for publish
           command: yarn prepare
       - run:
