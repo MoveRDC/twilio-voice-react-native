@@ -67,4 +67,6 @@ workflows:
           context:
             - aws
             - github
+          requires:
+            - setup_workspace
 
