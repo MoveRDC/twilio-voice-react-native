@@ -1,11 +1,12 @@
 # expo-twilio
 
-Expo wrapper for twilio
+Expo wrapper for twilio. This module was created from the expo-module tutorial and then the [twilio-voice-react-native](https://github.com/twilio/twilio-voice-react-native) library was added manually.
+Firebase has been removed from this implementation because it is not needed for our usecase and was causing issues with our notifications.
 
-# API documentation
 
-- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/twilio/)
-- [Documentation for the main branch](https://docs.expo.dev/versions/unversioned/sdk/twilio/)
+# Expo references
+This package uses autolinking, which is documented here [existing library expo module guide](https://docs.expo.dev/modules/existing-library/)
+
 
 # Installation in managed Expo projects
 

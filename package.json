@@ -1,6 +1,6 @@
 {
   "name": "expo-twilio",
-  "version": "0.1.0",
+  "version": "1.6.0",
   "description": "Expo wrapper for twilio",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -30,7 +30,8 @@
   "license": "MIT",
   "homepage": "https://github.com/MoveRDC/twilio-voice-react-native#readme",
   "dependencies": {
-    "eventemitter3": "^5.0.1"
+    "eventemitter3": "^5.0.1",
+    "release-it": "^19.0.4"
   },
   "devDependencies": {
     "@types/react": "~19.0.0",
@@ -42,5 +43,21 @@
     "expo": "*",
     "react": "*",
     "react-native": "*"
+  },
+  "packageManager": "yarn@4.9.2",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version} [skip ci]",
+      "requireBranch": "main",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
   }
 }
