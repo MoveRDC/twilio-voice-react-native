@@ -1,6 +1,9 @@
 
 version: 2.1
 
+orbs:
+  move-ci: moverdc/move-ci@3.4.0
+
 executors:
   default:
     docker:
