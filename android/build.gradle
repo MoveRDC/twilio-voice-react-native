@@ -2,14 +2,14 @@ apply plugin: 'com.android.library'
 
 buildscript {
   ext.versions = [
-          'java'               : JavaVersion.VERSION_11,
-          'androidGradlePlugin': '7.4.2',
-          'googleServices'     : '4.3.10',
-          'voiceAndroid'       : '6.7.1',
-          'androidxCore'       : '1.12.0',
-          'androidxLifecycle'  : '2.2.0',
-          'audioSwitch'        : '1.1.8',
-          'kotlin'             : '1.9.24'
+    'java'               : JavaVersion.VERSION_11,
+    'androidGradlePlugin': '7.4.2',
+    'googleServices'     : '4.3.10',
+    'voiceAndroid'       : '6.7.1',
+    'androidxCore'       : '1.12.0',
+    'androidxLifecycle'  : '2.2.0',
+    'audioSwitch'        : '1.1.8',
+    'kotlin'             : '1.9.24'
   ]
   if (project == rootProject) {
     repositories {
