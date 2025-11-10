@@ -1,0 +1,17 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: twilio-voice-react-native
+  title: Twilio Voice React Native
+  description: Expo wrapper for Twilio Voice functionality in React Native applications
+  tags:
+    - react-native
+    - typescript
+    - mobile
+  annotations:
+    circleci.com/project-slug: github/MoveRDC/twilio-voice-react-native
+spec:
+  type: library
+  lifecycle: experimental
+  owner: group:default/customer
